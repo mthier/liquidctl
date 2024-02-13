@@ -111,8 +111,6 @@ Copyright Jonas Malaco, CaseySJ and contributors
 SPDX-License-Identifier: GPL-3.0-or-later
 """
 
-import numpy as np
-
 import itertools
 import logging
 import time
@@ -854,8 +852,6 @@ class RGBController(_BaseSmartDevice):
             msg_length = len(header) + len(color_mode) + len(footer)
             space = [0x00 for _ in range(self._WRITE_LENGTH - msg_length)]
 
-            print_arr = ["{:02x}".format(i) for i in header + color_mode + space + footer]
-            print(np.array(print_arr).reshape(4, 16))
             self._write(header + color_mode + space + footer)
 
     def set_fixed_speed(self, channel, duty, **kwargs):
