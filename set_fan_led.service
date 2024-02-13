@@ -1,0 +1,7 @@
+[Unit]
+Description=Set fan LEDs
+[Service]
+WorkingDirectory=/opt/liquidctl/
+ExecStart=/opt/liquidctl/set_fan_led.sh
+[Install]
+WantedBy=multi-user.target
