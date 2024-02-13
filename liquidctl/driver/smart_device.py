@@ -698,10 +698,17 @@ class H1V2(SmartDevice2):
 
 
 class RGBController(_BaseSmartDevice):
-    _MATCHES = (0x1e71, 0x2012, 'NZXT RGB Controller', {
+
+    _MATCHES = [
+        (0x1e71, 0x2021, 'NZXT RGB Controller Kraken 240 RGB (2023)', {
             'speed_channel_count': 0,
             'color_channel_count': 3
-    }),
+        }),
+        (0x1e71, 0x2012, 'NZXT RGB Controller F-Series', {
+            'speed_channel_count': 0,
+            'color_channel_count': 3
+        }),
+    ]
 
     _MAX_READ_ATTEMPTS = 12
     _READ_LENGTH = 64
